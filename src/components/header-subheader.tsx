@@ -8,7 +8,7 @@ type SubtitleProps = {
 
 const Title: React.FC<TitleProps> = ({ title }) => {
   return (
-      <h1 className="text-slate-100 text-3xl font-bold content-center text-center">
+      <h1 className="text-slate-100 text-3xl font-bold content-center text-center pb-5">
         {title}
       </h1>
   );
