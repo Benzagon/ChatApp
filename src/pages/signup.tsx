@@ -1,6 +1,7 @@
 import { ButtonStructure } from "@/components/button";
 import { Title, Subtitle } from "@/components/header-subheader";
 import axios from "axios";
+import { error } from "console";
 
 const signup: React.FC = () => {
     const buttonHandler = () => {
@@ -12,6 +13,21 @@ const signup: React.FC = () => {
       .catch(error => console.log(error));
     };
 
+    const signupHandler = (name: string, email: string, password: string) => {
+      axios.post("http://localhost:3001/signup", {
+        user: [
+          {
+            "name": name,
+            "email": email,
+            "password": password
+          }
+        ]
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => console.error(error));
+    };
 
     return (
       <div className="flex bg-fixed min-h-screen bg-center bg-cover bg-no-repeat items-center bg-[url(../../public/blackDog.jpg)]">
@@ -31,6 +47,8 @@ const signup: React.FC = () => {
         <div>
           <button onClick={buttonHandler} className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">Axios</button>
           <p id="infoServer">Aca va la info</p>
+          
+          <button onClick={(e) => signupHandler("gonza", "pedro@gmail.com", "123")} className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">Create User</button>
         </div>
       </div>
     );
