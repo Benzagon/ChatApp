@@ -18,15 +18,15 @@ const Button: React.FC<ButtonProps> = ({ label, link }) => {
 
 type ButtonStructureProps = {
   label: string[];
-  link: string;
+  link: string[];
   gap: string;
 };
 
 const ButtonStructure: React.FC<ButtonStructureProps> = ({ label, link, gap }) => {
   return (
-    <div className={"flex mt-3" +gap}>
-      <Button label={label[0]} link={link}/>
-      <Button label={label[1]} link={link}/>
+    <div className={"flex justify-evenly mt-3 "}>
+      <Button label={label[0]} link={link[0]}/>
+      <Button label={label[1]} link={link[1]}/>
     </div>
   );
 };
