@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Type } from "typescript";
 
 type ButtonProps = {
   label: string;
@@ -15,4 +16,19 @@ const Button: React.FC<ButtonProps> = ({ label, link }) => {
   );
 };
 
-export default Button;
+type ButtonStructureProps = {
+  label: string[];
+  link: string[];
+  gap: string;
+};
+
+const ButtonStructure: React.FC<ButtonStructureProps> = ({ label, link, gap }) => {
+  return (
+    <div className={"flex justify-evenly mt-3 "}>
+      <Button label={label[0]} link={link[0]}/>
+      <Button label={label[1]} link={link[1]}/>
+    </div>
+  );
+};
+
+export { Button, ButtonStructure };
