@@ -8,13 +8,10 @@ import axios from "axios";
 const login: React.FC = () => {
 
   const loginHandler = (email: string, password: string) => {
-    axios.post("http://localhost:3001/login", {
-      user: [
-        {
-          "email": email,
-          "password": password
-        }
-      ]
+    axios.post("http://localhost:3001/login", 
+    {
+      "email": email,
+      "password": password
     })
     .then(res => {
       console.log(res.data);
@@ -42,10 +39,6 @@ const login: React.FC = () => {
     e.preventDefault()
 
     loginHandler(formData.email, formData.password)
-    setFormData({ 
-      email: "", 
-      password: "" 
-    })
   }
 
 

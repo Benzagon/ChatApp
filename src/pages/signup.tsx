@@ -15,14 +15,11 @@ const signup: React.FC = () => {
     };
 
     const signupHandler = (name: string, email: string, password: string) => {
-      axios.post("http://localhost:3001/signup", {
-        user: [
-          {
-            "name": name,
-            "email": email,
-            "password": password
-          }
-        ]
+      axios.post("http://localhost:3001/signup", 
+      {
+        "name": name,
+        "email": email,
+        "password": password
       })
       .then(response => {
         console.log(response.data);
