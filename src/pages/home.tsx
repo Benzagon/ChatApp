@@ -3,8 +3,10 @@ import Sidebar from "@/components/Sidebar";
 const home = () => {
     return (
         <>
-            <Sidebar></Sidebar>
-            <h1>Home</h1>
+            <div className="flex">
+                <Sidebar></Sidebar>
+                <h1>Home</h1>
+            </div>
         </>
     )
 };
