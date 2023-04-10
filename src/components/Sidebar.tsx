@@ -11,8 +11,8 @@ const Sidebar = () => {
                         <Image src={profilePicture} alt="profile picture" width={300}/>
                     </div>
                     <div>
-                        <h2 className='font-sans font-bold text-2xl text-blue-700'>Mauricio Mauro</h2>
-                        <h3 className='font-sans text-lg text-slate-500'>Siempre terraza nunca sótano</h3>
+                        <h2 className='font-sans font-bold text-xs text-blue-700 lg:text-2xl'>Mauricio Mauro</h2>
+                        <h3 className='font-sans text-xs text-slate-500 lg:text-lg'>Siempre terraza nunca sótano</h3>
                     </div>
                 </div>
 

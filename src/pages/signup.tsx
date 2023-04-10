@@ -64,9 +64,9 @@ const signup: React.FC = () => {
               <Subtitle subtitle="Name"/>
               <input type="text" onChange={handleInput} id="name" name="name" className="bg-slate-200 mb-2"></input>
               <Subtitle subtitle="Email"/>
-              <input type="text" onChange={handleInput} id="email" name="email" className="bg-slate-200 mb-3"></input>
+              <input type="email" onChange={handleInput} id="email" name="email" className="bg-slate-200 mb-3"></input>
               <Subtitle subtitle="Password"/>
-              <input type="text" onChange={handleInput} id="password" name="password" className="bg-slate-200 mb-3"></input>
+              <input type="password" onChange={handleInput} id="password" name="password" className="bg-slate-200 mb-3"></input>
               <button type="submit" className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">Submit</button>
               {/* <Subtitle subtitle="Confirmar contraseña"/>
               <input type="text" className="bg-slate-200"></input> */}
