@@ -37,8 +37,8 @@ const Chat: React.FC<ChatProps> = ({ name, lastMessage, profilePic }) => {
                     <Image src={profilePic} alt="profilePic" height={200} width={200}/>
                 </div>
                 <div>
-                    <h2 className='font-sans font-bold text-xs text-blue-700 md:text-sm'>{name}</h2>
-                    <h3 className='font-sans text-xs text-slate-500 md:text-sm'>{lastMessage}</h3>
+                    <h2 className='font-sans font-bold text-xs text-blue-700 lg:text-sm'>{name}</h2>
+                    <h3 className='font-sans text-xs text-slate-500 lg:text-sm'>{lastMessage}</h3>
                 </div>
             </div>
         </>
