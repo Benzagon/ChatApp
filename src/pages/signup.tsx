@@ -23,6 +23,9 @@ const signup: React.FC = () => {
       })
       .then(response => {
         console.log(response.data);
+        
+        //redirect to home
+        window.location.href = "/home";
       })
       .catch(error => console.error(error));
     };
@@ -45,7 +48,7 @@ const signup: React.FC = () => {
 
     const submitForm = (e: any) => {
       // We don't want the page to refresh
-      // e.preventDefault()
+      e.preventDefault()
 
       signupHandler(formData.name, formData.email, formData.password)
       setFormData({ 
