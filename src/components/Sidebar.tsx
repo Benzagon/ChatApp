@@ -32,7 +32,7 @@ type ChatProps = {
 const Chat: React.FC<ChatProps> = ({ name, lastMessage, profilePic }) => {
     return(
         <>
-            <div className='flex items-center m-auto gap-5 w-[80%]'>
+            <div className='flex items-center m-auto mt-3 gap-5 w-[80%]'>
                 <div className='aspect-square w-[25%] overflow-clip rounded-full border-solid'>
                     <Image src={profilePic} alt="profilePic" height={200} width={200}/>
                 </div>
