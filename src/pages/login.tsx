@@ -15,6 +15,7 @@ const login: React.FC = () => {
     })
     .then(res => {
       console.log(res.data);
+      window.location.href = "/home";
     })
     .catch(error => console.error(error));
   };

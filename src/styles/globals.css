@@ -4,8 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
 
 html {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: fit-content;
 }
 
 .btn {

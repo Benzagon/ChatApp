@@ -2,7 +2,6 @@ import { ButtonStructure } from "@/components/button";
 import { Title, Subtitle } from "@/components/header-subheader";
 import axios from "axios";
 import { useState } from "react";
-import Link from "next/link";
 
 const signup: React.FC = () => {
     const buttonHandler = () => {
