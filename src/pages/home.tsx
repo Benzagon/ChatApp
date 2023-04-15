@@ -1,4 +1,5 @@
 import Chat from "@/components/Sidebar";
+import Chatbox from "@/components/Chatbox";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MouseEvent } from "react";
@@ -61,9 +62,6 @@ const home = () => {
                         })}
                     </div>
                 </div>
-
-                {/* Chat */}
-                <div className="h-[100vh] w-[100vw] bg-[url(../../public/home.jpg)] bg-cover">
                     {/* Upper banner */}
                     <div className="w-[100%] bg-slate-300 left-0 h-28 flex items-center">
                         <div className='h-[90%] w-[100px] py-auto overflow-clip rounded-full border-solid relative'>
@@ -71,7 +69,7 @@ const home = () => {
                         </div>
                         <h2 className='font-sans font-bold text-xs text-blue-700 lg:text-sm'>{chat?.name}</h2>
                     </div>
-                </div>
+                <Chatbox></Chatbox>
             </div>
         </>
     )
