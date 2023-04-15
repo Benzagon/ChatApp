@@ -23,7 +23,7 @@ import Image from 'next/image';
 //     )
 // };
 
-type ChatProps = {
+export type ChatProps = {
     name: string;
     lastMessage: string;
     profilePic: string;
@@ -43,4 +43,4 @@ const Chat: React.FC<ChatProps> = ({ name, lastMessage, profilePic }) => {
     )
 };
 
-export {Chat};
+export default Chat;
