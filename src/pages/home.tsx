@@ -1,5 +1,5 @@
 import Chat from "@/components/Sidebar";
-import Chatbox from "@/components/Chatbox";
+import { Chatbox, Homepage } from "@/components/Chatbox";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MouseEvent } from "react";
@@ -10,6 +10,7 @@ const home = () => {
     const [userData, setUserData] = useState<ChatProps[]>([]);
     const [search, setSearch] = useState("");
     const [chat, setChat] = useState<ChatProps>();
+    console.log(chat);
 
     // get users from database
     useEffect(() => {
@@ -44,7 +45,7 @@ const home = () => {
 
     return (
         <>
-            <div className=" flex">
+            <div className="flex">
                 {/* Side Bar */}
                 <div className="w-fit bg-slate-200 left-0 h-[100vh]">
                     {/* Search Bar */}
@@ -52,7 +53,7 @@ const home = () => {
                         <input onChange={searcher} className='bg-slate-50 border m-auto border-slate-50 w-100 h-14 rounded-3xl p-4 focus:border-blue-500' placeholder='Search Friends'></input>
                     </div>
                     {/* User chats */}
-                    <div className='flex-col overflow-y-auto h-[calc(100vh-96px)]'> 
+                    <div className='flex-col overflow-y-auto h-[calc(100vh-96px)] scrollbar-hide'> 
                         {results.map((user: any) => {
                             return (
                                 <button onClick={selectChat(user.id)} key={user.id} className='flex text-left items-center m-auto mb-3 gap-5 w-[80%] hover:bg-slate-300 active:bg-slate-400 rounded'>
@@ -62,7 +63,9 @@ const home = () => {
                         })}
                     </div>
                 </div>
-                <Chatbox name={chat?.name}></Chatbox>
+
+                {/* Chat Box */}
+                {chat == undefined ? <div className="w-full h-screen pt-20 pl-6 bg-[url(../../public/home.jpg)] bg-cover"><Homepage/></div> : <Chatbox name={chat?.name}></Chatbox>}
             </div>
         </>
     )

@@ -10,6 +10,17 @@ html {
   height: fit-content;
 }
 
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .btn {
   @apply font-bold py-2 px-4 rounded;
 }
