@@ -62,14 +62,7 @@ const home = () => {
                         })}
                     </div>
                 </div>
-                    {/* Upper banner */}
-                    <div className="w-[100%] bg-slate-300 left-0 h-28 flex items-center">
-                        <div className='h-[90%] w-[100px] py-auto overflow-clip rounded-full border-solid relative'>
-                            <Image src={"/../public/man.jpg"} alt="profilePic" fill/>
-                        </div>
-                        <h2 className='font-sans font-bold text-xs text-blue-700 lg:text-sm'>{chat?.name}</h2>
-                    </div>
-                <Chatbox></Chatbox>
+                <Chatbox name={chat?.name}></Chatbox>
             </div>
         </>
     )
