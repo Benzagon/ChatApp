@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { MouseEvent } from "react";
 import Image from "next/image";
 import { ChatProps } from "@/components/Sidebar";
+import { idText } from "typescript";
 
 const home = () => {
     const [userData, setUserData] = useState<ChatProps[]>([]);
     const [search, setSearch] = useState("");
     const [chat, setChat] = useState<ChatProps>();
-    console.log(chat);
 
     // get users from database
     useEffect(() => {
@@ -43,6 +43,18 @@ const home = () => {
         setChat(info);
     }
 
+    const createChat = () => {
+        axios.post("http://localhost:3001/newChat",
+        {
+            messages: [],
+            user: null // TERMINAR
+        })
+        .then(response => {
+            console.log(response.data)
+        })
+        .catch(error => console.log(error));
+    }
+
     return (
         <>
             <div className="flex">
@@ -65,7 +77,7 @@ const home = () => {
                 </div>
 
                 {/* Chat Box */}
-                {chat == undefined ? <div className="w-full h-screen pt-20 pl-6 bg-[url(../../public/home.jpg)] bg-cover"><Homepage/></div> : <Chatbox name={chat?.name}></Chatbox>}
+                {chat == undefined ? <div className="w-full h-screen pt-20 pl-6 bg-[url(../../public/home.jpg)] bg-cover"><Homepage/></div> : <Chatbox name={chat?.name} onClick={createChat}></Chatbox>}
             </div>
         </>
     )

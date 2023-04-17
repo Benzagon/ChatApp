@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { Button } from "./button";
 
 type ChatProps = {
-    name: any;
+    name: string;
+    onClick?: () => void;
 };
 
 const Homepage = () => {
@@ -12,7 +14,7 @@ const Homepage = () => {
     );
 };
 
-const Chatbox: React.FC<ChatProps> = ({name}) => {
+const Chatbox = ({name, onClick}: ChatProps) => {
     return (
         <div className="w-full h-screen bg-slate-100">
             {/* Header */}
@@ -25,10 +27,8 @@ const Chatbox: React.FC<ChatProps> = ({name}) => {
 
             {/* Chat */}
             <div className="grid p-10">
-                <div>
-                    <h1>Hola</h1>
-                    </div>
                 <input type="text" />
+                <Button label="Send" onClick={onClick}></Button>
             </div>
         </div>
     );

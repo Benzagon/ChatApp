@@ -3,16 +3,14 @@ import { Type } from "typescript";
 
 type ButtonProps = {
   label: string;
-  link: string;
+  onClick?: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ label, link }) => {
+const Button = ({ label, onClick }: ButtonProps) => {
   return (
-    <Link href={link}>
-      <button className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">
+      <button onClick={onClick} className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">
         {label}
       </button>
-    </Link>
   );
 };
 
@@ -25,8 +23,8 @@ type ButtonStructureProps = {
 const ButtonStructure: React.FC<ButtonStructureProps> = ({ label, link, gap }) => {
   return (
     <div className={"flex justify-evenly mt-3 "}>
-      <Button label={label[0]} link={link[0]}/>
-      <Button label={label[1]} link={link[1]}/>
+      {/* <Button label={label[0]} link={link[0]}/>
+      <Button label={label[1]} link={link[1]}/> */}
     </div>
   );
 };
