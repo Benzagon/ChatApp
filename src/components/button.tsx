@@ -4,13 +4,16 @@ import { Type } from "typescript";
 type ButtonProps = {
   label: string;
   onClick?: () => void;
+  link: string;
 };
 
-const Button = ({ label, onClick }: ButtonProps) => {
+const Button = ({ label, onClick, link }: ButtonProps) => {
   return (
+    <Link href={link}>
       <button onClick={onClick} className="text-slate-300 font-bold py-2 px-4 rounded bg-blue-700 hover:bg-blue-800 transition duration-100">
         {label}
       </button>
+      </Link>
   );
 };
 

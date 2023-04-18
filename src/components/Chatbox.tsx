@@ -28,7 +28,7 @@ const Chatbox = ({name, onClick}: ChatProps) => {
             {/* Chat */}
             <div className="grid p-10">
                 <input type="text" />
-                <Button label="Send" onClick={onClick}></Button>
+                <Button label="Send" onClick={onClick} link=""></Button>
             </div>
         </div>
     );
